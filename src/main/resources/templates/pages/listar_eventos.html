@@ -9,11 +9,29 @@
 </head>
 <body>
     <header></header>
-    <section>
-        <ul>
-            
-        </ul>
-    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Nome do Evento</td>
+                <td>Data do Evento</td>
+                <td>Url</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody th:each="evento : ${eventos}">
+        <tr>
+            <td th:text="${evento.nome}"></td>
+            <td th:text="${evento.data}"></td>
+            <td th:text="${evento.url}"></td>
+            <td>
+                <button class="btn btn-primary"><a href="/editar">Editar</a></button>
+                <button class="btn btn-danger"><a href="/remover">Remover</a></button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
     <script type="module" src="/js/template.js"></script>
+    <script type="module" src="/js/listar_eventos.js"></script>
 </body>
 </html>

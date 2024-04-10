@@ -3,7 +3,7 @@ export function Input(props) {
         `
         <div class="p-2">
             <label for= ${props.id} >${props.label}</label>
-            <input th:text="*{${props.text}}}" name=${props.name} id=${props.id} type="text"/>
+            <input type="text" th:field="*{${props.text}}" name=${props.name} id=${props.id} />
         </div>
         `
     )

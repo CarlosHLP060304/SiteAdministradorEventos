@@ -10,8 +10,8 @@
 <body>
     <header></header>
     <main>
-        <form action="/evento/cadastrar" id="form_adiciona_evento" method="post">
-            
+        <form  action="/evento/cadastrar"  th:object="${evento}" method="post" id="form_adiciona_evento">
+
         </form>
     </main>
     <script type="module" src="/js/template.js"></script>

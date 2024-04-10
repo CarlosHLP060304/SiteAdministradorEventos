@@ -20,9 +20,11 @@ public class Evento {
 
     @Size(min = 3, message = "A data deve ter no mínimo 3 caracteres")
     private String nome;
+
     @NotBlank
     @Size(min = 10, message = "A data deve ter no mínimo 10 caracteres")
     private String data;
+
     @NotBlank
     @Size(min = 3)
     private String url;
