@@ -7,6 +7,8 @@ export function Header (props){
             <li><a href=${props.link_home}>Home</a></li>
             <li><a href=${props.link_novo_evento}>Adicionar novo Evento</a></li>
             <li><a href=${props.link_listar_eventos}>Listar todos os Eventos</a></li>
+            <li><a href=${props.link_nova_cidade}>Adicionar nova as Cidade</a></li>
+            <li><a href=${props.link_listar_cidades}>Listar todas as Cidades</a></li>
         </ul>
       </nav>
 </header>`)

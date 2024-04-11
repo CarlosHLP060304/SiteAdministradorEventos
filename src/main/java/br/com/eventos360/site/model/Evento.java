@@ -18,6 +18,7 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     @Size(min = 3, message = "A data deve ter no mínimo 3 caracteres")
     private String nome;
 

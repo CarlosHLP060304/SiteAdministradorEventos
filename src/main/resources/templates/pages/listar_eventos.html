@@ -11,12 +11,12 @@
     <header></header>
     <table class="table">
         <thead>
-            <tr>
-                <td>Nome do Evento</td>
-                <td>Data do Evento</td>
-                <td>Url</td>
-                <td></td>
-            </tr>
+        <tr>
+            <td>Nome do Evento</td>
+            <td>Data do Evento</td>
+            <td>Url</td>
+            <td></td>
+        </tr>
         </thead>
         <tbody th:each="evento : ${eventos}">
         <tr>
@@ -32,6 +32,5 @@
         </tbody>
     </table>
     <script type="module" src="/js/template.js"></script>
-    <script type="module" src="/js/listar_eventos.js"></script>
 </body>
 </html>

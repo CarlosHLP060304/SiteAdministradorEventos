@@ -2,8 +2,7 @@
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Eventos</title>
+    <title>Listar cidades</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -12,17 +11,15 @@
     <table class="table">
         <thead>
         <tr>
-            <td>Nome do Evento</td>
-            <td>Data do Evento</td>
-            <td>Url</td>
+            <td>Cidade</td>
+            <td>Estado</td>
             <td></td>
         </tr>
         </thead>
-        <tbody th:each="evento : ${eventos}">
+        <tbody th:each="cidade : ${cidades}">
         <tr>
-            <td th:text="${evento.nome}"></td>
-            <td th:text="${evento.data}"></td>
-            <td th:text="${evento.url}"></td>
+            <td th:text="${cidade.nome}"></td>
+            <td th:text="${cidade.estado}"></td>
             <td>
                 <button class="btn btn-primary"><a href="/editar">Editar</a></button>
                 <button class="btn btn-danger"><a href="/remover">Remover</a></button>
