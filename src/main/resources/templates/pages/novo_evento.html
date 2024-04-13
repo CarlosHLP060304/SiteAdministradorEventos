@@ -10,11 +10,32 @@
 <body>
     <header></header>
     <main>
-        <form  action="/evento/cadastrar"  th:object="${evento}" method="post" id="form_adiciona_evento">
+        <h2>Cadastrar Evento</h2>
+        <form action="#" th:action="@{/evento/cadastrar}"  th:object="${evento}" method="post" id="form_adiciona_evento" class="p-2">
+                <div class="p-2">
+                    <label for="nome">Nome do Evento :</label>
+                    <input type="text" th:field="*{nome}" id="nome">
+                    <span th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}" />
+                </div>
 
+                <div class="p-2">
+                    <label for="data">Data do Evento :</label>
+                    <input type="text" th:field="*{data}" id="data">
+                    <span th:errors="*{data}" th:if="${#fields.hasErrors('data')}" />
+                </div>
+
+                <div class="p-2">
+                    <label for="url">Url para acessar Evento :</label>
+                    <input type="text" th:field="*{url}"  id="url">
+                    <span th:errors="*{url}" th:if="${#fields.hasErrors('url')}"/>
+                </div>
+            <select id="dropDownList" style="display:block" name="cidade">
+                <option value="0">Selecione a cidade na qual ocorrerá o evento</option>
+                <option th:each="cidade : ${cidades}" th:value="${cidade.id}" th:text="${cidade.nome}"></option>
+            </select>
+            <button style="margin-top:10px">Adicionar evento</button>
         </form>
     </main>
     <script type="module" src="/js/template.js"></script>
-    <script type="module" src="/js/novo_evento.js"></script>
 </body>
 </html>

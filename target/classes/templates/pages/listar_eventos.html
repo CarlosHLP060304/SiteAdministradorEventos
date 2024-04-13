@@ -15,6 +15,8 @@
             <td>Nome do Evento</td>
             <td>Data do Evento</td>
             <td>Url</td>
+            <td>Cidade</td>
+            <td>Estado</td>
             <td></td>
         </tr>
         </thead>
@@ -23,6 +25,8 @@
             <td th:text="${evento.nome}"></td>
             <td th:text="${evento.data}"></td>
             <td th:text="${evento.url}"></td>
+            <td th:text="${evento.cidade.nome}"></td>
+            <td th:text="${evento.cidade.estado}"></td>
             <td>
                 <form  th:action="@{/evento/editar/{id}(id=${evento.id})}" th:object="${evento}">
                     <input class="btn btn-primary" value="Editar" type="submit"/>

@@ -9,11 +9,21 @@
 <body>
     <header></header>
     <main>
-        <form  action="/cidade/cadastrar"  th:object="${cidade}" method="post" id="form_adiciona_cidade">
-
+        <h2>Cadastrar Cidade</h2>
+        <form action="#" th:action="@{/cidade/cadastrar}"  th:object="${cidade}" method="post" id="form_adiciona_cidade">
+            <div class="p-2">
+                <label for="nome">Nome da Cidade :</label>
+                <input type="text" th:field="*{nome}" name="nome" id="nome">
+                <span th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}"></span>
+            </div>
+            <div class="p-2">
+                <label for="estado">Estado :</label>
+                <input type="text" th:field="*{estado}" name="estado" id="estado">
+                <span th:errors="*{estado}" th:if="${#fields.hasErrors('estado')}"></span>
+            </div>
+            <button>Adicionar Cidade</button>
         </form>
     </main>
     <script type="module" src="/js/template.js"></script>
-    <script type="module" src="/js/nova_cidade.js"></script>
 </body>
 </html>

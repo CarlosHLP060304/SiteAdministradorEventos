@@ -18,17 +18,19 @@ public class CidadeController {
     private CidadeService service;
 
     @GetMapping("/cadastrar")
-    public String carregarPaginaFormulario(){
-
+    public String carregarPaginaFormulario(Model model){
+        model.addAttribute("cidade",new Cidade());
         return "pages/nova_cidade";
     }
 
     @PostMapping("/cadastrar")
-    public String salvarDadosEvento(@Valid Cidade cidade, Model model, BindingResult result){
-        service.save(cidade);
+    public String salvarDadosCidade(@Valid Cidade cidade,BindingResult result){
+        System.out.println(result.hasErrors());
         if(result.hasErrors()){
+            System.out.println("Entrou");
             return "/pages/nova_cidade";
         }
+        service.save(cidade);
         return "redirect:/cidade/listar";
     }
 
@@ -47,7 +49,10 @@ public class CidadeController {
 
 
     @PutMapping("/{id}")
-    public String alterarDadosEvento(Model model,@Valid Cidade cidade){
+    public String alterarDadosEvento(Model model,@Valid Cidade cidade,BindingResult result){
+        if(result.hasErrors()){
+            return "pages/editar_cidade";
+        }
         service.save(cidade);
         return "redirect:/cidade/listar";
     }
@@ -57,4 +62,5 @@ public class CidadeController {
         service.deleteById(id);
         return "redirect:/cidade/listar";
     }
+
 }

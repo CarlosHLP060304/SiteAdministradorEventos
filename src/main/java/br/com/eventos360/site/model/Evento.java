@@ -7,7 +7,7 @@ import lombok.*;
 
 
 @Entity
-@Table(name = "tb_evento")
+@Table(name = "tb_eventos")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,16 +18,19 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Campo requerido")
     @Size(min = 3, message = "A data deve ter no mínimo 3 caracteres")
     private String nome;
 
-    @NotBlank
+    @NotBlank(message = "Campo requerido")
     @Size(min = 10, message = "A data deve ter no mínimo 10 caracteres")
     private String data;
 
-    @NotBlank
-    @Size(min = 3)
+    @NotBlank(message = "Campo requerido")
+    @Size(min = 3,message = "")
     private String url;
 
+    @ManyToOne
+    @JoinColumn(name = "cidade_id",nullable = false)
+    private Cidade cidade;
 }

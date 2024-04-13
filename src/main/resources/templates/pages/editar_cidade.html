@@ -17,12 +17,15 @@
         <div class="p-2">
             <label for="nome">Nome da Cidade :</label>
             <input type="text" th:field="*{nome}" name="nome" id="nome">
+            <span th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}"></span>
         </div>
         <div class="p-2">
             <label for="estado">Estado :</label>
             <input type="text" th:field="*{estado}" name="estado" id="estado">
+            <span th:errors="*{estado}" th:if="${#fields.hasErrors('estado')}"></span>
         </div>
-        <button>Concluir Edição</button></form>
+        <button>Concluir Edição</button>
+    </form>
 </main>
 <script type="module" src="/js/template.js"></script>
 </body>

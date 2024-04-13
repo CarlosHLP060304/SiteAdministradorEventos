@@ -14,20 +14,27 @@
           <div class="p-2">
               <label for="nome">Nome do Evento :</label>
               <input type="text" th:field="*{nome}" name="nome" id="nome">
+              <span th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}"></span>
           </div>
 
           <div class="p-2">
               <label for="data">Data do Evento :</label>
               <input type="text" th:field="*{data}" name="data" id="data">
+              <span th:errors="*{data}" th:if="${#fields.hasErrors('data')}"></span>
           </div>
 
           <div class="p-2">
               <label for="url">Url para acessar Evento :</label>
               <input type="text" th:field="*{url}" name="url" id="url">
+              <span th:errors="*{url}" th:if="${#fields.hasErrors('url')}"></span>
           </div>
-          <button>Adicionar Evento</button>
+         <select id="dropDownList" style="display:block" name="cidade">
+              <option value="0">Selecione a cidade na qual ocorrerá o evento</option>
+              <option th:each="cidade : ${cidades}" th:value="${cidade.id}" th:text="${cidade.nome}"></option>
+        </select>
+
+          <button>Concluir Edição</button>
   </form>
   <script src="/js/template.js" type="module"></script>
-<!--  <script src="/js/editar_evento.js" type="module"></script>-->
 </body>
 </html>
