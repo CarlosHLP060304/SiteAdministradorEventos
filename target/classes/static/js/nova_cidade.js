@@ -1,8 +1,4 @@
-import {Input} from './componentes/input.js'
+import {FormCidade} from './componentes/form_cidade.js'
 
-document.querySelector("#form_adiciona_cidade").innerHTML =
+document.querySelector("#form_adiciona_cidade").innerHTML = FormCidade()
 
-Input({"id":"nome","name":"nome","label":"Nome da Cidade :","text":"nome"}) +
-Input({"id":"estado","name":"estado","label":"Estado :","text":"estado"}) +
-
-"<button>Adicionar Cidade</button>"

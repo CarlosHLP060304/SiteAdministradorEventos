@@ -24,8 +24,13 @@
             <td th:text="${evento.data}"></td>
             <td th:text="${evento.url}"></td>
             <td>
-                <button class="btn btn-primary"><a href="/editar">Editar</a></button>
-                <button class="btn btn-danger"><a href="/remover">Remover</a></button>
+                <form  th:action="@{/evento/editar/{id}(id=${evento.id})}" th:object="${evento}">
+                    <input class="btn btn-primary" value="Editar" type="submit"/>
+                </form>
+                <form  th:action="@{/evento/{id}(id=${evento.id})}" th:object="${evento}" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input class="btn btn-danger" value="Remover" type="submit"/>
+                </form>
             </td>
 
         </tr>

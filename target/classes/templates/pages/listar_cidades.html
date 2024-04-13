@@ -21,10 +21,14 @@
             <td th:text="${cidade.nome}"></td>
             <td th:text="${cidade.estado}"></td>
             <td>
-                <button class="btn btn-primary"><a href="/editar">Editar</a></button>
-                <button class="btn btn-danger"><a href="/remover">Remover</a></button>
+            <form  th:action="@{/cidade/editar/{id}(id=${cidade.id})}" th:object="${cidade}">
+                <input class="btn btn-primary" value="Editar" type="submit"/>
+            </form>
+            <form  th:action="@{/cidade/{id}(id=${cidade.id})}" th:object="${cidade}" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input class="btn btn-danger" value="Remover" type="submit"/>
+            </form>
             </td>
-
         </tr>
         </tbody>
     </table>

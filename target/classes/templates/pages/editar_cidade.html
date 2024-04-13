@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Cidade</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header></header>
+
+<main>
+    <form action="#" th:action="@{/cidade/{id}(id=${cidade.id})}" th:object="${cidade}" method="post" id="form_edita_cidade">
+        <input type="hidden" name="_method" value="put">
+        <div class="p-2">
+            <label for="nome">Nome da Cidade :</label>
+            <input type="text" th:field="*{nome}" name="nome" id="nome">
+        </div>
+        <div class="p-2">
+            <label for="estado">Estado :</label>
+            <input type="text" th:field="*{estado}" name="estado" id="estado">
+        </div>
+        <button>Adicionar Cidade</button></form>
+</main>
+<script type="module" src="/js/template.js"></script>
+</body>
+</html>

@@ -24,4 +24,16 @@ public class CidadeService {
     public List findAll(){
         return repository.findAll();
     }
+    @Transactional
+    public Cidade findById(Long id){
+        return repository.findById(id).orElseThrow(
+                ()->{
+                    throw new IllegalArgumentException();
+                }
+        );
+    }
+    @Transactional
+    public void deleteById(Long id){
+         repository.deleteById(id);
+    }
 }

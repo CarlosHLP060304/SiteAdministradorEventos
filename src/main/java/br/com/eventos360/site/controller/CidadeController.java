@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/cidade")
@@ -38,5 +36,25 @@ public class CidadeController {
     public String carregarPaginaListagem(Model model){
         model.addAttribute("cidades",service.findAll());
         return "pages/listar_cidades";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String carregaPaginaEditar(@PathVariable("id") Long id, Model model){
+        Cidade cidade = service.findById(id);
+        model.addAttribute("cidade",cidade);
+        return "pages/editar_cidade";
+    }
+
+
+    @PutMapping("/{id}")
+    public String alterarDadosEvento(Model model,@Valid Cidade cidade){
+        service.save(cidade);
+        return "redirect:/cidade/listar";
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletarEventoPeloNome(@PathVariable("id") Long id){
+        service.deleteById(id);
+        return "redirect:/cidade/listar";
     }
 }

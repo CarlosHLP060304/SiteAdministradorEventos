@@ -1,5 +1,6 @@
 package br.com.eventos360.site.service;
 
+import br.com.eventos360.site.model.Cidade;
 import br.com.eventos360.site.model.Evento;
 import br.com.eventos360.site.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,21 @@ public class EventoService {
     public void save(Evento evento) {
         repository.save(evento);
     }
+
+    @Transactional
+    public Evento findById(Long id){
+        return repository.findById(id).orElseThrow(
+                ()->{
+                    throw new IllegalArgumentException();
+                }
+        );
+    }
+
+    @Transactional
+    public void deleteById(Long id){
+        repository.deleteById(id);
+    }
+
 
     @Transactional
     public List findAll() {
