@@ -19,15 +19,15 @@ public class Evento {
     private Long id;
 
     @NotBlank(message = "Campo requerido")
-    @Size(min = 3, message = "A data deve ter no mínimo 3 caracteres")
+    @Size(min = 3, message = "O nome do evento deve ter no mínimo 3 caracteres")
     private String nome;
 
     @NotBlank(message = "Campo requerido")
-    @Size(min = 10, message = "A data deve ter no mínimo 10 caracteres")
+    @Size(min = 10, message = "A data deve ter no mínimo 10 caracteres (dd/MM/yyyy)")
     private String data;
 
     @NotBlank(message = "Campo requerido")
-    @Size(min = 3,message = "")
+    @Size(min = 3,message = "A url deve ter no mínimo 3 caracteres")
     private String url;
 
     @ManyToOne
