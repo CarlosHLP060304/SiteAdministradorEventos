@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"nome","data","url"})
+@EqualsAndHashCode(exclude = {"nome","data","url","cidade"})
 public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
