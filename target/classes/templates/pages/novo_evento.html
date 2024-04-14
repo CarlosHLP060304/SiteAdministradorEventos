@@ -15,23 +15,23 @@
                 <div class="p-2">
                     <label for="nome">Nome do Evento :</label>
                     <input type="text" th:field="*{nome}" id="nome">
-                    <span th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}" />
+                    <span th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}"></span>
                 </div>
 
                 <div class="p-2">
                     <label for="data">Data do Evento :</label>
                     <input type="text" th:field="*{data}" id="data">
-                    <span th:errors="*{data}" th:if="${#fields.hasErrors('data')}" />
+                    <span th:errors="*{data}" th:if="${#fields.hasErrors('data')}"></span>
                 </div>
 
                 <div class="p-2">
                     <label for="url">Url para acessar Evento :</label>
                     <input type="text" th:field="*{url}"  id="url">
-                    <span th:errors="*{url}" th:if="${#fields.hasErrors('url')}"/>
+                    <span th:errors="*{url}" th:if="${#fields.hasErrors('url')}"></span>
                 </div>
+            <label>Selecione a cidade na qual ocorrerá o evento:</label>
             <select id="dropDownList" style="display:block" name="cidade">
-                <option value="0">Selecione a cidade na qual ocorrerá o evento</option>
-                <option th:each="cidade : ${cidades}" th:value="${cidade.id}" th:text="${cidade.nome}"></option>
+                <option th:each="cidade : ${cidades}" th:value="${cidade.id}" th:text="${cidade.nome + '-' +  cidade.estado}"></option>
             </select>
             <button style="margin-top:10px">Adicionar evento</button>
         </form>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Editar Evento</title>
@@ -28,12 +28,12 @@
               <input type="text" th:field="*{url}" name="url" id="url">
               <span th:errors="*{url}" th:if="${#fields.hasErrors('url')}"></span>
           </div>
+        <label>Selecione a cidade na qual ocorrerá o evento:</label>
          <select id="dropDownList" style="display:block" name="cidade">
-              <option value="0">Selecione a cidade na qual ocorrerá o evento</option>
-              <option th:each="cidade : ${cidades}" th:value="${cidade.id}" th:text="${cidade.nome}"></option>
+              <option th:each="cidade : ${cidades}" th:value="${cidade.id}" th:text="${cidade.nome + '-' + cidade.estado}"></option>
         </select>
 
-          <button>Concluir Edição</button>
+          <button style="margin-top:10px">Concluir Edição</button>
   </form>
   <script src="/js/template.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>

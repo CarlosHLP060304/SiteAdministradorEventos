@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Nova Cidade</title>
@@ -21,7 +21,7 @@
                 <input type="text" th:field="*{estado}" name="estado" id="estado">
                 <span th:errors="*{estado}" th:if="${#fields.hasErrors('estado')}"></span>
             </div>
-            <button>Adicionar Cidade</button>
+            <button style="margin-top:10px">Adicionar Cidade</button>
         </form>
     </main>
     <script src="/js/template.js"></script>

@@ -3,7 +3,7 @@ const header =  document.querySelector("header")
 
 header.innerHTML =
 `
-<h1>Página de Admin</h1>
+<h1>Página de Administrador</h1>
 <nav class=" d-flex align-items-center  justify-content-end ">
   <ul class="d-flex align-items-center ">
       <li><a href="/">Home</a></li>
