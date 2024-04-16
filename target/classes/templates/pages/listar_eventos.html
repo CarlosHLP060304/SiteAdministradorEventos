@@ -20,11 +20,11 @@
             <td></td>
         </tr>
         </thead>
-        <tbody th:each="evento : ${eventos}">
-        <tr>
+        <tbody>
+        <tr th:each="evento : ${eventos}">
             <td th:text="${evento.nome}"></td>
             <td th:text="${evento.data}"></td>
-            <td th:text="${evento.url}"></td>
+            <td><a th:href="${evento.url}" th:text="${evento.url}" class="text-primary"></a></td>
             <td th:text="${evento.cidade.nome}"></td>
             <td th:text="${evento.cidade.estado}"></td>
             <td>
